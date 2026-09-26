@@ -1,0 +1,33 @@
+name: arikratt
+type: remote
+meta:
+  category: data-analytics
+  tags:
+    - data-analytics
+    - company-data
+    - procurement
+    - remote
+about:
+  title: Ärikratt
+  description: >-
+    Estonian companies, EMTAK sectors, regions, grants, and public procurement
+    from public registers. Read-only and company-level only. Tools:
+    search_companies, get_company, check_counterparty, compare_companies,
+    find_companies, sector_stats, region_stats, open_calls,
+    procurement_notices, risk_signals.
+  icon: https://arikratt.ee/apple-touch-icon.png
+remote:
+  transport_type: streamable-http
+  url: https://arikratt.ee/mcp
+  headers:
+    Authorization: "Bearer ${ARIKRATT_API_KEY}"
+config:
+  description: >-
+    Personal API key. Sent as Authorization: Bearer <key>. Required for
+    tools/call. A 14-day trial with 50 successful tool calls is requested by email at
+    arikratt@r-53.com.
+  secrets:
+    - name: arikratt.api_key
+      env: ARIKRATT_API_KEY
+      example: <YOUR_API_KEY>
+      required: true
